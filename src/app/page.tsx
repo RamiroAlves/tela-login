@@ -44,7 +44,7 @@ export default function Login() {
         >
           <h1 className="text-4xl text-white">Sign In</h1>
           <p className="mb-5 text-white">
-            Keep it all together and you'll be fine
+            Enter your access credentials
           </p>
           <div className="mb-2">
             <InputDefault
@@ -64,7 +64,7 @@ export default function Login() {
               handleChange={handlePayload}
             />
           </div>
-          <ButtonDefault children="Sign In" type="submit" disabled={loading} />
+          <ButtonDefault content="Sign In" type="submit" disabled={loading} />
         </form>
       </main>
     </div>
