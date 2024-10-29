@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+![image](https://github.com/user-attachments/assets/c4a23c08-9317-48d7-8a6a-b63d88f8335d)
+
+
 ## Getting Started
 
 First, run the development server:
