@@ -9,7 +9,7 @@ interface IProps {
     handleChange: (key: string, value: string) => void;
 }
 
-const InputDefault:React.FC<IProps> = ({ type, id, placeholder, required, handleChange }: IProps) => {
+const InputDefault:React.FC<IProps> = ({ type, id, placeholder, required, handleChange }) => {
   return (
     <div className="p-1 text-left">
       <Input
