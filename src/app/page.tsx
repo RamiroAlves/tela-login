@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input"
-import { useToast } from "@/hooks/use-toast"
-
+import { useToast } from "@/hooks/use-toast";
+import InputDefault from "@/components/inputDefault";
+import ButtonDefault from "@/components/buttonDefault";
 
 interface IPayload {
   email: string;
@@ -23,16 +22,17 @@ export default function Login() {
     setPayload({ ...payload, [key]: value });
   };
 
-  const onSubmit= () => {
+  const onSubmit = () => {
     setLoading(true);
+    // Simulando tempo de requisição
     setTimeout(() => {
       setLoading(false);
       toast({
         title: "Login successfull",
-        description: "Logged in user"
-      })
-    }, 2000)
-  }
+        description: "Logged in user",
+      });
+    }, 2000);
+  };
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -43,31 +43,28 @@ export default function Login() {
           className="backdrop-blur-sm border-2 rounded-md py-5 px-7"
         >
           <h1 className="text-4xl text-white">Sign In</h1>
-          <p className="mb-5 text-white">Keep it all together and you'll be fine</p>
+          <p className="mb-5 text-white">
+            Keep it all together and you'll be fine
+          </p>
           <div className="mb-2">
-            <Input
-              className="bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-cyan-400 focus:border-cyan-500 block w-full p-2.5 bg-transparent dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-400 dark:focus:border-cyan-400"
+            <InputDefault
               type="email"
               id="email"
               placeholder="Email"
               required
-              onChange={({ target }) => handlePayload('email', target.value)}
+              handleChange={handlePayload}
             />
           </div>
           <div className="mb-4">
-            <Input
-              className="bg-gray-50 border border-gray-300 text-sm text-white rounded-lg focus:ring-cyan-400 focus:border-cyan-500 block w-full p-2.5 bg-transparent dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-400 dark:focus:border-cyan-400"
+            <InputDefault
               type="password"
               id="password"
               placeholder="Password"
               required
-              onChange={({ target }) => handlePayload('password', target.value)}
+              handleChange={handlePayload}
             />
           </div>
-          <Button
-           className="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:outline-none focus:ring-cyan-200 font-medium rounded-lg text-sm w-full px-5 py-2.5 mb-4 text-center dark:bg-cyan-500 dark:hover:bg-cyan-600 dark:focus:ring-cyan-700"
-           disabled={loading}
-          >Sign In</Button>
+          <ButtonDefault children="Sign In" type="submit" disabled={loading} />
         </form>
       </main>
     </div>
